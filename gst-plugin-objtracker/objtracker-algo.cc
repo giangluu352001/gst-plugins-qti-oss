@@ -435,7 +435,7 @@ gst_objtracker_algo_execute_text (GstObjTrackerAlgo * algo,
     gst_structure_set_value (trackerregion, "rectangle", &array);
     g_value_reset (&array);
 
-    gst_structure_set (trackerregion, "tracking-id", G_TYPE_UINT,
+    gst_structure_set (trackerregion, "tracking-id", G_TYPE_INT,
         results[i].track_id, NULL);
 
     g_value_unset (&value);
@@ -529,7 +529,7 @@ gst_objtracker_algo_execute_buffer (GstObjTrackerAlgo * algo,
 
     param = gst_video_region_of_interest_meta_get_param (roimeta,
         "ObjectDetection");
-    gst_structure_set (param, "tracking-id", G_TYPE_UINT, results[i].track_id,
+    gst_structure_set (param, "tracking-id", G_TYPE_INT, results[i].track_id,
         NULL);
   }
 
